@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".StartFragment">
+
+    <data>
+        <variable
+            name="startFragment"
+            type="com.example.cakeapp.StartFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:importantForAccessibility="no"
+                android:scaleType="center"
+                app:srcCompat="@drawable/bakery" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="14dp"
+                android:text="@string/make_your_order"
+                android:textAppearance="?attr/textAppearanceHeadline4"
+                android:textColor="@color/material_on_background_emphasis_medium"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/wedding_cakes"
+                android:onClick="@{() -> startFragment.order(1)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:minWidth="250dp"
+                android:text="@string/wedding_cakes" />
+
+            <Button
+                android:id="@+id/birthday_cakes"
+                android:onClick="@{() -> startFragment.placeOrder(1)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:minWidth="250dp"
+                android:text="@string/birthday_cakes" />
+
+            <Button
+                android:id="@+id/congrats_cake"
+                android:onClick="@{() -> startFragment.makeOrder(3)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:minWidth="250dp"
+                android:text="@string/congratulations_cakes" />
+
+            <Button
+                android:id="@+id/cupcake"
+                android:onClick="@{() -> startFragment.clickToOrder(1)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:minWidth="250dp"
+                android:text="@string/cupcake" />
+
+            <Button
+                android:id="@+id/cake"
+                android:onClick="@{() -> startFragment.myOrder(1)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:minWidth="250dp"
+                android:text="@string/cakes" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

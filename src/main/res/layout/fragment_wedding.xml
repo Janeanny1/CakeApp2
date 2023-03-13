@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".FlavorFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.cakeapp.model.OrderViewModel" />
+
+        <variable
+            name="weddingFragment"
+            type="com.example.cakeapp.WeddingFragment" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="194dp"
+        android:src="@drawable/wedding_cakes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                android:text="Choose Flavor"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/flavor_options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/text"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <RadioButton
+                    android:id="@+id/vanilla"
+                    android:onClick="@{() -> viewModel.setFlavor(@string/vanilla)}"
+                    android:checked="@{viewModel.flavor.equals(@string/vanilla)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vanilla" />
+
+                <RadioButton
+                    android:id="@+id/chocolate"
+                    android:onClick="@{() -> viewModel.setFlavor(@string/chocolate)}"
+                    android:checked="@{viewModel.flavor.equals(@string/chocolate)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chocolate" />
+
+                <RadioButton
+                    android:id="@+id/strawberry"
+                    android:onClick="@{() -> viewModel.setFlavor(@string/strawberry)}"
+                    android:checked="@{viewModel.flavor.equals(@string/strawberry)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Strawberry" />
+
+                <RadioButton
+                    android:id="@+id/red_velvet"
+                    android:onClick="@{() -> viewModel.setFlavor(@string/red_velvet)}"
+                    android:checked="@{viewModel.flavor.equals(@string/red_velvet)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Red_velvet" />
+
+                <RadioButton
+                    android:id="@+id/salted_caramel"
+                    android:onClick="@{() -> viewModel.setFlavor(@string/salted_caramel)}"
+                    android:checked="@{viewModel.flavor.equals(@string/salted_caramel)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Salted_caramel" />
+
+                <RadioButton
+                    android:id="@+id/coffee"
+                    android:onClick="@{() -> viewModel.setFlavor(@string/coffee)}"
+                    android:checked="@{viewModel.flavor.equals(@string/coffee)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coffee" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/choose_pickup_day"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/flavor_options"/>
+
+            <RadioGroup
+                android:id="@+id/date_options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/option0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.date.equals(viewModel.dateOptions[0])}"
+                    android:onClick="@{() -> viewModel.setDate(viewModel.dateOptions[0])}"
+                    android:text="@{viewModel.dateOptions[0]}"
+                    tools:text="Thursday" />
+
+                <RadioButton
+                    android:id="@+id/option1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.date.equals(viewModel.dateOptions[1])}"
+                    android:onClick="@{() -> viewModel.setDate(viewModel.dateOptions[1])}"
+                    android:text="@{viewModel.dateOptions[1]}"
+                    tools:text="Friday" />
+
+                <RadioButton
+                    android:id="@+id/option2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.date.equals(viewModel.dateOptions[2])}"
+                    android:onClick="@{() -> viewModel.setDate(viewModel.dateOptions[2])}"
+                    android:text="@{viewModel.dateOptions[2]}"
+                    tools:text="Saturday" />
+
+                <RadioButton
+                    android:id="@+id/option3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.date.equals(viewModel.dateOptions[3])}"
+                    android:onClick="@{() -> viewModel.setDate(viewModel.dateOptions[3])}"
+                    android:text="@{viewModel.dateOptions[3]}"
+                    tools:text="Sunday" />
+            </RadioGroup>
+        </RadioGroup>
+
+        <View
+            android:id="@+id/divider"
+            style="@style/Widget.Bakery.TextView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flavor_options" />
+
+        <Button
+            android:id="@+id/next_button"
+            android:onClick="@{() -> weddingFragment.clickNext()}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

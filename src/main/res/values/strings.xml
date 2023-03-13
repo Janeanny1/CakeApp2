@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">CakeApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cupcake">Cupcake</string>
+    <string name="congratulations_cakes">Congratulations Cakes</string>
+    <string name="birthday_cakes">Birthday Cakes</string>
+    <string name="wedding_cakes">Wedding Cakes</string>
+    <string name="make_your_order">MAKE YOUR ORDER</string>
+    <string name="valentine_cakes">Valentine Cakes</string>
+    <string name="cakes">Cakes</string>
+    <string name="vanilla">vanilla</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="salted_caramel">Salted Caramel</string>
+    <string name="coffee">Coffee</string>
+    <string name="red_velvet">Red Velvet</string>
+    <string name="strawberry">Strawberry</string>
+    <string name="total_price">Total %s</string>
+    <string name="order_details">Quantity: %1s \n Flavor: %2s \nPickup date: %3s \n
+        Total: %4s \n\n Thank you!</string>
+    <string name="new_cake_order">New Cake Order</string>
+    <string name="cancel">Cancel</string>
+    <string name="send">Send</string>
+    <string name="next">Next</string>
+    <string name="choose_pickup_day">Choose Pickup Day</string>
+    <string name="placeholder_image">Placeholder</string>
+
+    <plurals name="cakes">
+        <item quantity="one">%d cake</item>
+        <item quantity="other">%d cakes</item>
+    </plurals>
+</resources>
